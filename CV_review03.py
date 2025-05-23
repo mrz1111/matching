@@ -23,20 +23,6 @@ import io
 import re
 import random
 
-# Force install packages if missing
-import subprocess
-import sys
-
-def install_package(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-try:
-    import plotly.express as px
-except ImportError:
-    install_package('plotly')
-    import plotly.express as px
-    
-
 # === PAGE CONFIG WITH CUSTOM THEME ===
 st.set_page_config(
     page_title="CV Analyzer - Unlock Your Next Opportunity",
@@ -52,7 +38,7 @@ st.markdown("""
     .stApp {
         background-color: #FAFBFC;
     }
-    
+
     /* Sidebar styling */
     .css-1d391kg {
         background-color: #FFFFFF;
